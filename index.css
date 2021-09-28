@@ -1,0 +1,459 @@
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #EFEFEF;
+  background: radial-gradient(circle, #EFEFEF 31%, #0A1931 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#64b4b2",endColorstr="#367550",GradientType=1);
+  text-align: center;
+  width: 100vw;
+  font-family: 'Lato', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #0A1931;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 5rem;
+  margin: 0;
+  margin-bottom: 50px;
+  color: #0A1931;
+}
+
+h2, h3 {
+  margin: 0;
+  font-weight: 900;
+  background: #FFC947;
+  color: #0A1931;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 20px 45px;
+  border-radius: 50px;
+  -webkit-box-shadow: 3px 3px 10px #000;
+          box-shadow: 3px 3px 10px #000;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.objects {
+  font-size: 3rem;
+  -webkit-transform: translateX(-7.5%);
+          transform: translateX(-7.5%);
+}
+
+h6 {
+  font-size: 2rem;
+  background: #EFEFEF;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 100px;
+  padding: 10px 0;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 98%;
+  margin: 0 auto;
+}
+
+.mapping {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 10px;
+  position: relative;
+  height: 80vh;
+}
+
+.object-container {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 30%;
+  border-radius: 10px;
+  gap: 30px;
+}
+
+.family {
+  left: 10%;
+}
+
+.neighbors {
+  right: 10%;
+}
+
+.workmates {
+  bottom: 30%;
+  left: 10%;
+}
+
+.society {
+  right: 10%;
+  bottom: 30%;
+}
+
+.next-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-top: 100px;
+}
+
+ul {
+  position: relative;
+}
+
+li {
+  list-style: none;
+  font-size: 1.65rem;
+  position: absolute;
+  background: #EFEFEF;
+  display: inline-block;
+  padding: 15px 30px;
+  font-weight: 900;
+  color: #0A1931;
+  border-radius: 100px;
+  -webkit-box-shadow: 3px 3px 7px 1px #111;
+          box-shadow: 3px 3px 7px 1px #111;
+  opacity: 0.75;
+}
+
+.ethical, .unethical {
+  position: relative;
+}
+
+.eth-list li:first-child {
+  -webkit-transform: translate(-350px, -80px);
+          transform: translate(-350px, -80px);
+}
+
+.eth-list li:nth-child(2) {
+  -webkit-transform: translate(-300px, 30px);
+          transform: translate(-300px, 30px);
+}
+
+.eth-list li:last-child {
+  -webkit-transform: translate(-120px, 50px);
+          transform: translate(-120px, 50px);
+}
+
+.uneth-list li:first-child {
+  -webkit-transform: translate(135px, -80px);
+          transform: translate(135px, -80px);
+}
+
+.uneth-list li:nth-child(2) {
+  -webkit-transform: translate(75px, 30px);
+          transform: translate(75px, 30px);
+}
+
+.uneth-list :last-child {
+  -webkit-transform: translate(-130px, 50px);
+          transform: translate(-130px, 50px);
+}
+
+.obj-arrow {
+  background: #0A1931;
+  width: 30px;
+  position: absolute;
+  z-index: -1;
+}
+
+.fam-arrow, .nei-arrow {
+  height: 250px;
+  top: -210px;
+}
+
+*::before, *::after {
+  content: "";
+  position: absolute;
+}
+
+*::after {
+  height: 0;
+  width: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+}
+
+.fam-arrow::before,
+.nei-arrow::before {
+  background: #0A1931;
+  height: 30px;
+  top: 235px;
+}
+
+.fam-arrow::before {
+  width: 630px;
+  left: -600px;
+}
+
+.nei-arrow::before {
+  width: 600px;
+  left: -30px;
+}
+
+.fam-arrow::after, .nei-arrow::after {
+  top: 235px;
+}
+
+.fam-arrow::after {
+  left: -630px;
+  border-right: 30px solid #0A1931;
+}
+
+.nei-arrow::after {
+  left: 570px;
+  border-left: 30px solid #0A1931;
+}
+
+.wor-arrow, .soc-arrow {
+  height: 41.645vh;
+  background: #0A1931;
+}
+
+.wor-arrow::before,
+.soc-arrow::before,
+.wor-arrow::after,
+.soc-arrow::after {
+  top: 40vh;
+}
+
+.wor-arrow::before,
+.soc-arrow::before {
+  background: #0A1931;
+  height: 30px;
+  width: 550px;
+}
+
+.wor-arrow::before {
+  left: -550px;
+}
+
+.soc-arrow::before {
+  left: 30px;
+}
+
+.wor-arrow::after {
+  left: -580px;
+  border-right: 30px solid #0A1931;
+}
+
+.soc-arrow::after {
+  left: 580px;
+  border-left: 30px solid #0A1931;
+}
+
+.eth-arrow {
+  position: absolute;
+  height: 150px;
+  width: 10px;
+  background: #0749ca;
+  left: 45%;
+  -webkit-transform: translateX(-200%) rotate(40deg);
+          transform: translateX(-200%) rotate(40deg);
+  top: 95px;
+}
+
+.uneth-arrow {
+  position: absolute;
+  height: 150px;
+  width: 10px;
+  background: #0749ca;
+  left: 54.6%;
+  -webkit-transform: translateX(-200%) rotate(-40deg);
+          transform: translateX(-200%) rotate(-40deg);
+  top: 95px;
+}
+
+.eth-arrow::before, .uneth-arrow::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #0749ca;
+  border-left: 5px solid transparent;
+  top: 150px;
+  left: 0;
+}
+
+.eth-arrows, .uneth-arrows {
+  width: 5px;
+  background: #0749ca;
+  position: absolute;
+}
+
+.eth-arrows:nth-child(2) {
+  -webkit-transform: rotate(85deg);
+          transform: rotate(85deg);
+}
+
+.family .eth-arrows:nth-child(2) {
+  height: 30px;
+  top: 35px;
+  left: -28px;
+}
+
+.neighbors .eth-arrows:nth-child(2) {
+  height: 25px;
+  top: 35px;
+  left: -25px;
+}
+
+.workmates .eth-arrows:nth-child(2) {
+  height: 43px;
+  top: 15px;
+  left: -37px;
+}
+
+.society .eth-arrows:nth-child(2) {
+  height: 65px;
+  top: 15px;
+  left: -45px;
+}
+
+.eth-arrows:nth-child(3) {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.family .eth-arrows:nth-child(3) {
+  height: 100px;
+  top: 70px;
+}
+
+.neighbors .eth-arrows:nth-child(3) {
+  height: 60px;
+  top: 80px;
+}
+
+.workmates .eth-arrows:nth-child(3),
+.society .eth-arrows:nth-child(3) {
+  height: 80px;
+  top: 75px;
+}
+
+.eth-arrows:nth-child(4) {
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+  height: 40px;
+  left: 75px;
+  top: 90px;
+}
+
+.uneth-arrows:nth-child(2) {
+  -webkit-transform: rotate(-85deg);
+          transform: rotate(-85deg);
+}
+
+.family .uneth-arrows:nth-child(2) {
+  height: 20px;
+  top: 35px;
+  right: -25px;
+}
+
+.neighbors .uneth-arrows:nth-child(2) {
+  height: 15px;
+  top: 35px;
+  right: -25px;
+}
+
+.workmates .uneth-arrows:nth-child(2) {
+  height: 15px;
+  top: 35px;
+  right: -27px;
+}
+
+.society .uneth-arrows:nth-child(2) {
+  height: 10px;
+  top: 35px;
+  right: -25px;
+}
+
+.uneth-arrows:nth-child(3) {
+  -webkit-transform: rotate(-60deg);
+          transform: rotate(-60deg);
+}
+
+.family .uneth-arrows:nth-child(3) {
+  height: 50px;
+  top: 80px;
+  right: 0;
+}
+
+.neighbors .uneth-arrows:nth-child(3) {
+  height: 30px;
+  top: 85px;
+  right: 0;
+}
+
+.workmates .uneth-arrows:nth-child(3),
+.society .uneth-arrows:nth-child(3) {
+  height: 40px;
+  top: 85px;
+  right: 0;
+}
+
+.family .uneth-arrows:nth-child(4),
+.neighbors .uneth-arrows:nth-child(4),
+.workmates .uneth-arrows:nth-child(4),
+.society .uneth-arrows:nth-child(4) {
+  height: 40px;
+  left: 75px;
+  top: 90px;
+}
+
+.uneth-arrows:nth-child(4) {
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+  height: 40px;
+  top: 90px;
+}
+/*# sourceMappingURL=index.css.map */

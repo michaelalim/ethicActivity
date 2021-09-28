@@ -1,0 +1,430 @@
+$left: #EFEFEF;
+$right: #0A1931;
+$complement: #FFC947;
+$arrow: #0A1931;
+$inner-arrows: #0749ca;
+$strong: #0A1931;
+
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+body, html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: $left;
+    background: -moz-radial-gradient(circle, $left 31%, $right 100%);
+    background: -webkit-radial-gradient(circle, $left 31%, $right 100%);
+    background: radial-gradient(circle, $left 31%, $right 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#64b4b2",endColorstr="#367550",GradientType=1);
+    text-align: center;
+    width: 100vw;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $right;
+}
+
+//MAIN HEADER
+h1{
+    font-weight: 900;
+    font-size: 5rem;
+    margin: 0;
+    margin-bottom: 50px;
+    color: $right;
+}
+
+//actions,object headers,words ethical and unethical
+h2, h3{
+    margin: 0;
+    font-weight: 900;
+    background: $complement;
+    color: $right;
+    width: fit-content;
+    display: inline-block;
+    align-self: center;
+    padding: 20px 45px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 10px #000;
+}
+
+h2{
+    font-size: 3.5rem;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+.objects{
+    font-size: 3rem;
+    transform: translateX(-7.5%);
+}
+
+//towards!
+h6{
+    font-size: 2rem;
+    background: $left;
+    width: fit-content;
+    align-self: center;
+    margin-top: 100px;
+    padding: 10px 0;
+}
+
+// everything except the main header h1
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin: 0 auto;
+}
+
+// container of object container
+.mapping{
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    position: relative;
+    height: 80vh;
+}
+
+// container of each objects eg Family, Neighbors, etc.
+.object-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    border-radius: 10px;
+    gap: 30px;
+}
+
+.family{
+    left: 10%;
+}
+
+.neighbors{
+    right: 10%;
+}
+
+.workmates{
+    bottom: 30%;
+    left: 10%;
+}
+
+.society{
+    right: 10%;
+    bottom: 30%;
+}
+
+// Ethical and non ethical grouping
+.next-line{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+ul{
+    position: relative;
+}
+
+li{
+    list-style: none;
+    font-size: 1.65rem;
+    position: absolute;
+    background: $left;
+    display: inline-block;
+    padding: 15px 30px;
+    font-weight: 900;
+    color: $strong;
+    border-radius: 100px;
+    box-shadow: 3px 3px 7px 1px #111;
+    opacity: 0.75;
+}
+
+.ethical, .unethical{
+    position: relative;
+}
+
+.eth-list li:first-child{
+    transform: translate(-350px,-80px);
+}
+
+.eth-list li:nth-child(2){
+    transform: translate(-300px, 30px);
+}
+
+.eth-list li:last-child{
+    transform: translate(-120px,50px);
+}
+
+.uneth-list li:first-child{
+    transform: translate(135px, -80px);
+}
+
+.uneth-list li:nth-child(2){
+    transform: translate(75px, 30px);
+}
+
+.uneth-list :last-child{
+    transform: translate(-130px, 50px);
+}
+
+//arrows
+.obj-arrow{
+    background: $right;
+    width: 30px;
+    position: absolute;
+    z-index: -1;
+}
+
+.fam-arrow, .nei-arrow{
+    height: 250px;
+    top: -210px;
+}
+
+*::before, *::after{
+    content: "";
+    position: absolute;
+}
+
+*::after{
+    height: 0;
+    width: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+
+.fam-arrow::before, 
+.nei-arrow::before{
+    background: $arrow;
+    height: 30px;
+    top: 235px;
+}
+
+.fam-arrow::before{
+    width: 630px;
+    left: -600px;
+}
+
+.nei-arrow::before{
+    width: 600px;
+    left: -30px;
+}
+
+.fam-arrow::after, .nei-arrow::after{
+    top: 235px;
+}
+
+.fam-arrow::after{
+    left: -630px;
+    border-right: 30px solid $arrow;
+}
+
+.nei-arrow::after{
+    left: 570px;
+    border-left: 30px solid $arrow;
+}
+
+.wor-arrow, .soc-arrow{
+    height: 41.645vh;
+    background: $arrow;
+}
+
+.wor-arrow::before, 
+.soc-arrow::before, 
+.wor-arrow::after, 
+.soc-arrow::after{
+    top: 40vh;
+}
+
+.wor-arrow::before, 
+.soc-arrow::before{
+    background: $arrow;
+    height: 30px;
+    width: 550px;
+}
+
+.wor-arrow::before{
+    left: -550px;
+}
+
+.soc-arrow::before{
+    left: 30px;
+}
+
+.wor-arrow::after{
+    left: -580px;
+    border-right: 30px solid $arrow;
+}
+
+.soc-arrow::after{
+    left: 580px;
+    border-left: 30px solid $arrow;
+}
+
+//eth and uneth arrows
+
+.eth-arrow{
+    position: absolute;
+    height: 150px;
+    width: 10px;
+    background: $inner-arrows;
+    left: 45%;
+    transform: translateX(-200%) rotate(40deg);
+    top: 95px;
+}
+
+.uneth-arrow{
+    position: absolute;
+    height: 150px;
+    width: 10px;
+    background: $inner-arrows;
+    left: 54.6%;
+    transform: translateX(-200%) rotate(-40deg);
+    top: 95px;
+}
+
+.eth-arrow::before, .uneth-arrow::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-right: 5px solid transparent;
+    border-top: 10px solid $inner-arrows;
+    border-left: 5px solid transparent;
+    top: 150px;
+    left: 0;
+}
+
+//ex-arrows
+.eth-arrows, .uneth-arrows{
+    width: 5px;
+    background: $inner-arrows;
+    position: absolute;
+}
+
+.eth-arrows:nth-child(2){
+    transform: rotate(85deg);
+}
+
+.family .eth-arrows:nth-child(2){
+    height: 30px;
+    top: 35px;
+    left: -28px;
+}
+
+.neighbors .eth-arrows:nth-child(2){
+    height: 25px;
+    top: 35px;
+    left: -25px;
+}
+
+.workmates .eth-arrows:nth-child(2){
+    height: 43px;
+    top: 15px;
+    left: -37px;
+}
+
+.society .eth-arrows:nth-child(2){
+    height: 65px;
+    top: 15px;
+    left: -45px;
+}
+
+.eth-arrows:nth-child(3){
+    transform: rotate(60deg);
+}
+
+.family .eth-arrows:nth-child(3){
+    height: 100px;
+    top: 70px;
+}
+
+.neighbors .eth-arrows:nth-child(3){
+    height: 60px;
+    top: 80px;
+}
+
+.workmates .eth-arrows:nth-child(3),
+.society .eth-arrows:nth-child(3){
+    height: 80px;
+    top: 75px;
+}
+
+.eth-arrows:nth-child(4){
+    transform: rotate(5deg);
+    height: 40px;
+    left: 75px;
+    top: 90px;
+}
+
+.uneth-arrows:nth-child(2){
+    transform: rotate(-85deg);
+}
+
+.family .uneth-arrows:nth-child(2){
+    height: 20px;
+    top: 35px;
+    right: -25px;
+}
+
+.neighbors .uneth-arrows:nth-child(2){
+    height: 15px;
+    top: 35px;
+    right: -25px;
+}
+
+.workmates .uneth-arrows:nth-child(2){
+    height: 15px;
+    top: 35px;
+    right: -27px;
+}
+
+.society .uneth-arrows:nth-child(2){
+    height: 10px;
+    top: 35px;
+    right: -25px;
+}
+
+.uneth-arrows:nth-child(3){
+    transform: rotate(-60deg);
+}
+
+.family .uneth-arrows:nth-child(3){
+    height: 50px;
+    top: 80px;
+    right: 0;
+}
+
+.neighbors .uneth-arrows:nth-child(3){
+    height: 30px;
+    top: 85px;
+    right: 0;
+}
+
+.workmates .uneth-arrows:nth-child(3),
+.society .uneth-arrows:nth-child(3){
+    height: 40px;
+    top: 85px;
+    right: 0;
+}
+
+.family .uneth-arrows:nth-child(4), 
+.neighbors .uneth-arrows:nth-child(4),
+.workmates .uneth-arrows:nth-child(4),
+.society .uneth-arrows:nth-child(4){
+    height: 40px;
+    left: 75px;
+    top: 90px;
+}
+
+.uneth-arrows:nth-child(4){
+    transform: rotate(-5deg);
+    height: 40px;
+    top: 90px;
+}
